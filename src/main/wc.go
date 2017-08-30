@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"mapreduce"
 	"os"
+	"unicode"
+	"strconv"
+	"strings"
 )
 
 //
@@ -15,6 +18,32 @@ import (
 //
 func mapF(filename string, contents string) []mapreduce.KeyValue {
 	// TODO: you have to write this function
+	var mapValues[] mapreduce.KeyValue
+	//begin,i := 0,0
+	s := ""
+	count:=0
+	for i:=0 ;i<len(contents);i++ {
+	//val, _ := strconv.Atoi(contents[i:i+1])
+        if unicode.IsLetter(rune(contents[i])){
+		s = s+ string(contents[i])
+	}else {
+          if len(s)>0 {
+	    if s== "was"{
+		 count = count+1
+		}  
+            temp := mapreduce.KeyValue{s,"1"}	
+            mapValues = append(mapValues, temp)
+            }
+            s = ""
+        }
+
+  }
+	if len(s)>0 {
+            temp := mapreduce.KeyValue{s,"1"}
+            mapValues = append(mapValues, temp)
+            }
+	fmt.Println("the count of was in redf is", count)
+	return mapValues
 }
 
 //
@@ -24,6 +53,12 @@ func mapF(filename string, contents string) []mapreduce.KeyValue {
 //
 func reduceF(key string, values []string) string {
 	// TODO: you also have to write this function
+	count := 0	
+	for i:=0;i<len(values);i++{
+		val, _ := strconv.Atoi(values[i])
+		count = count + val
+	}
+	return strconv.Itoa(count)
 }
 
 // Can be run in 3 ways:
