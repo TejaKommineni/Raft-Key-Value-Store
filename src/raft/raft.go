@@ -24,7 +24,11 @@ import (
 	//"fmt"
 
 )
-import "math/rand"
+import (
+	"math/rand"
+	//"fmt"
+	//"fmt"
+)
 // import "bytes"
 // import "encoding/gob"
 
@@ -115,10 +119,10 @@ func (rf *Raft) GetState() (int, bool) {
 	// Your code here (2A).
 	term = rf.currentTerm
 	if rf.me == rf.leader{
-	   isleader = true
+		isleader = true
 	}else{
-	   isleader = false
-	}	
+		isleader = false
+	}
 	return term, isleader
 }
 
@@ -180,7 +184,7 @@ type RequestVoteArgs struct {
 	Term int
 	CandidateId int
 	LastLogIndex int
-	LastLogTerm int	
+	LastLogTerm int
 	// Your data here (2A, 2B).
 }
 
@@ -227,15 +231,15 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.leader = -1
 		if rf.state == Leader || rf.state == Candidate{
 			rf.voteChan <- reply
-		//	rf.timeChan.Stop()
-		//	rf.setState(Follower)
-		//	rf.leader = -1
+			//	rf.timeChan.Stop()
+			//	rf.setState(Follower)
+			//	rf.leader = -1
 		}
 	}else if rf.currentTerm == args.Term && rf.votedFor != -1 && rf.votedFor != args.CandidateId{
 		reply.Term = args.Term
 		reply.VoteGranted = false
 		////fmt.Println("I didnt vote to the candidate",rf.me, args.CandidateId)
-        return
+		return
 	}
 
 	////fmt.Println("I have recieved an vote from ",args.CandidateId, rf.me)
@@ -280,25 +284,25 @@ func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *Reques
 }
 
 type AppendEntriesArgs struct {
-        Term int
-        LeaderId int
-        PrevLogIndex int
-        PrevLogTerm int
-		Command int
-        LeaderCommit int
-        Append bool
-		CommandTerm int
-        // Your data here (2A, 2B).
+	Term int
+	LeaderId int
+	PrevLogIndex int
+	PrevLogTerm int
+	Command int
+	LeaderCommit int
+	Append bool
+	CommandTerm int
+	// Your data here (2A, 2B).
 }
 
 type AppendEntriesReply struct {
-        Term int
-        Success bool
-        Append bool
-        Index int
-        CommitIndex int
-        Peer int
-        // Your data here (2A).
+	Term int
+	Success bool
+	Append bool
+	Index int
+	CommitIndex int
+	Peer int
+	// Your data here (2A).
 }
 
 //
@@ -403,13 +407,13 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	////fmt.Println()
 	////fmt.Println("I replied you know")
 	rf.respChan <- reply
-    return;
-        // Your code here (2A, 2B).
-    }
+	return;
+	// Your code here (2A, 2B).
+}
 
 func (rf *Raft) sendAppendEntries(server int, args *AppendEntriesArgs, reply *AppendEntriesReply) bool{
-        ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
-        return ok
+	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
+	return ok
 }
 //
 // the service using Raft (e.g. a k/v server) wants to start
@@ -454,10 +458,17 @@ func (rf *Raft) clientInbox(){
 	for {
 		<-rf.ready
 		rf.readyToSendCommands = true
-		msg := <-rf.command
-		index := <- rf.command
-		////fmt.Println("the message is",msg)
-		////fmt.Println("the index is",index)
+		<-rf.command
+		rf.mutex.Lock()
+		msg := rf.commands[0]
+		index := rf.commands[1]
+		rf.commands = rf.commands[2:]
+		rf.mutex.Unlock()
+
+		//msg := <-rf.command
+		//index := <- rf.command
+		//fmt.Println("the message is",msg)
+		//fmt.Println("the index is",index)
 		rf.commandToAgree, _ = index.(int)
 		rf.readyToSendCommands = false
 		time.Sleep(time.Millisecond * 10)
@@ -478,6 +489,7 @@ func (rf *Raft) clientInbox(){
 					request.LeaderId = rf.me
 					request.PrevLogIndex,_ = index.(int)
 					request.PrevLogIndex--
+					//fmt.Println(request.PrevLogIndex)
 					request.PrevLogTerm = rf.log[request.PrevLogIndex].Term
 					request.Command = data
 					request.LeaderCommit = rf.commitIndex
@@ -492,9 +504,9 @@ func (rf *Raft) clientInbox(){
 							// in paper is being avoided. issue: when the three new servers are joining the herd back one of them is
 							// getting the command 20 which  it missed earlier and becoming an quoroum which is not expected.
 							//for ok == false {
-								//fmt.Printf("Raft server %[2]d passed the command %[3]d to server %[1]d ",i,rf.me,data)
-							    //fmt.Println()
-								 rf.sendAppendEntries(i, &request, &reply)
+							//fmt.Printf("Raft server %[2]d passed the command %[3]d to server %[1]d ",i,rf.me,data)
+							//fmt.Println()
+							rf.sendAppendEntries(i, &request, &reply)
 							//}
 							////fmt.Printf("Raft server %[1]d has sent heart beat messages to %[2]d",rf.me,i)
 							////fmt.Println()
@@ -529,7 +541,7 @@ func (rf *Raft) MemberCount() int {
 	count := 0
 	for i:=0;i<len(rf.peers);i++{
 		if rf.peers[i]!= nil{
-		count++;
+			count++;
 		}
 	}
 	return count
@@ -586,12 +598,12 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	}
 	// Your initialization code here (2A, 2B, 2C).
 	go func(applyCh chan ApplyMsg){
-	    rf.loop(applyCh)
+		rf.loop(applyCh)
 	}(applyCh)
-    // initialize from state persisted before a crash
+	// initialize from state persisted before a crash
 	// rf.readPersist(persister.ReadRaftState())
 	return  rf
-	}
+}
 
 func (rf *Raft) loop(applyCh chan ApplyMsg){
 	state := rf.State()
@@ -640,17 +652,17 @@ func (rf *Raft) followerLoop(applyCh chan ApplyMsg) {
 		////fmt.Println("we are here",rf.me)
 		update := false
 		select {
-			case <- rf.timeChan.C:
-				//fmt.Printf("Raft server %[1]d didn't recieve a message in the heartbeat interval %[2]d", rf.me,time.Now().Sub(temp)/time.Millisecond)
-				//fmt.Println()
-				//temp= time.Now()
-				update = true
-			case <- rf.respChan:
-				rf.timeChan.Stop()
-				rf.timeChan = time.NewTicker(time.Millisecond * time.Duration(rf.electionTimeout))
-			default:
-				update = false
-				////fmt.Printf("Raft server %[1]d is still in follower state.",rf.me)
+		case <- rf.timeChan.C:
+			//fmt.Printf("Raft server %[1]d didn't recieve a message in the heartbeat interval %[2]d", rf.me,time.Now().Sub(//temp)/time.Millisecond)
+			//fmt.Println()
+			//temp= time.Now()
+			update = true
+		case <- rf.respChan:
+			rf.timeChan.Stop()
+			rf.timeChan = time.NewTicker(time.Millisecond * time.Duration(rf.electionTimeout))
+		default:
+			update = false
+			////fmt.Printf("Raft server %[1]d is still in follower state.",rf.me)
 		}
 		if update == true{
 			rf.setState(Candidate)
@@ -670,7 +682,7 @@ func (rf *Raft) followerLoop(applyCh chan ApplyMsg) {
 
 	}
 
-	}
+}
 
 func (rf *Raft) candidateLoop() {
 
@@ -685,7 +697,7 @@ func (rf *Raft) candidateLoop() {
 	rf.voteChan = make(chan *RequestVoteReply, len(rf.peers))
 	votesGranted := 0
 	var respChan chan *RequestVoteReply
- 	for rf.State() == Candidate {
+	for rf.State() == Candidate {
 		if goForElection {
 			// Increment current term, vote for self.
 			rf.currentTerm++
@@ -759,8 +771,8 @@ func (rf *Raft) candidateLoop() {
 			}
 		}
 
-    	}
 	}
+}
 
 func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 	// Begin to collect response from followers
@@ -827,7 +839,7 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 							//fmt.Println()
 							rf.respChan <- &reply
 						}
-				}(i,request)
+					}(i,request)
 				}
 			}
 			//since = time.Now()
@@ -908,14 +920,19 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 
 		default:
 			if rf.State()!= Leader{
-					return
+				return
 			}
 			if len(rf.commands)>1  && rf.readyToSendCommands{
 				////fmt.Println("are you struck here")
 				//fmt.Println("the commands array is",rf.commands)
-				rf.command <- rf.commands[0]
-				rf.command <- rf.commands[1]
-				rf.commands = rf.commands[2:]
+				//fmt.Println("the commands are",rf.commands[0])
+				//fmt.Println("the commands are",rf.commands[1])
+				rf.mutex.Lock()
+				rf.command <- 111
+				//	rf.commands[0]
+				//rf.command <- rf.commands[1]
+				//rf.commands = rf.commands[2:]
+				rf.mutex.Unlock()
 				////fmt.Println("yes I am")
 				time.Sleep(time.Millisecond*10)
 			}
