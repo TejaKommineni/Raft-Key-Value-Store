@@ -208,7 +208,7 @@ type RequestVoteReply struct {
 //
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
-
+	//fmt.Println("My log while voting is", rf.me, rf.log)
 	if rf.currentTerm > args.Term {
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = false
@@ -246,10 +246,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.Term = args.Term
 		reply.VoteGranted = true
 		rf.persist()
-		if rf.state == Leader || rf.state == Candidate{
-			rf.voteChan <- reply
-		}
-		fmt.Printf("Raft Server %[1]d in term %[2]d has voted for candidate %[3]d in term %[4]d",rf.me,rf.currentTerm,args.CandidateId,args.Term)
+		rf.voteChan <- reply // if you have voted for some one please dont go to candidate immediately give some space.
+		fmt.Printf("Raft Server %[1]d in term %[2]d  and state %[5]v has voted for candidate %[3]d in term %[4]d",rf.me,rf.currentTerm,args.CandidateId,args.Term,rf.state)
 		fmt.Println()
 		return
 	}else{
@@ -320,6 +318,7 @@ type AppendEntriesReply struct {
 	Index int
 	CommitIndex int
 	Peer int
+	ConflictingIndex int
 	// Your data here (2A).
 }
 
@@ -327,9 +326,9 @@ type AppendEntriesReply struct {
 // example RequestVote RPC handler.
 //
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
-
 	reply.Append = args.Append
 	reply.Peer = rf.me
+	reply.ConflictingIndex = -1
 
 	if args.Append && (args.PrevLogIndex < len(rf.log)-1 && rf.log[args.PrevLogIndex+1].Term == args.Term &&  rf.log[args.PrevLogIndex+1].Data == args.Command) {
 		fmt.Printf("Raft server %[1]d in term %[2]d has recieved the duplicate command %[5]d from server %[3]d in term %[4]d",rf.me,rf.currentTerm,args.LeaderId,args.Term,args.Command)
@@ -348,15 +347,25 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	}
 
 	if args.Append && (args.PrevLogIndex != len(rf.log)-1 ||  args.PrevLogTerm != rf.log[len(rf.log)-1].Term ){
-		fmt.Println("someone is entering here",rf.me,rf.currentTerm,args.LeaderId,args.Term)
-		if len(rf.log)-1>args.PrevLogIndex{
+		fmt.Printf("Raft Serever %[1]d with term %[2]d is entering here with leader %[3]d in term %[4]d",rf.me,rf.currentTerm,args.LeaderId,args.Term)
+		fmt.Println()
+		fmt.Println("Raft server before log", rf.me, rf.log)
+		if len(rf.log)-1 > args.PrevLogIndex{
 			rf.log = rf.log[:args.PrevLogIndex]
+		}else if len(rf.log)-1 < args.PrevLogIndex{
+
 		}else if len(rf.log)-1 == args.PrevLogIndex &&  args.PrevLogTerm != rf.log[len(rf.log)-1].Term{
-			rf.log = rf.log[:len(rf.log)-1]
+			tempTerm := rf.log[len(rf.log)-1].Term
+			for rf.log[len(rf.log)-1].Term == tempTerm{
+				rf.log = rf.log[:len(rf.log)-1]
+			}
 		}
+
 		if(len(rf.log) == 0) {
 			rf.appendLog(Log{0, 0})
 		}
+		fmt.Println("after log",rf.me, rf.log)
+		reply.ConflictingIndex = len(rf.log)
 		reply.Success = false
 		rf.leader = args.LeaderId
 		// This double game of changing reply.term is because we are using the same reply for sending response to leader
@@ -382,8 +391,8 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		rf.persist()
 		return;
 	}else{
-		fmt.Printf("Raft server %[1]d in term %[2]d has received a heartbeat message from server %[3]d in term %[4]d and commit index %[5]d",rf.me,rf.currentTerm,args.LeaderId,args.Term,args.LeaderCommit)
-		fmt.Println()
+		//fmt.Printf("Raft server %[1]d in term %[2]d has received a heartbeat message from server %[3]d in term %[4]d and commit index %[5]d",rf.me,rf.currentTerm,args.LeaderId,args.Term,args.LeaderCommit)
+		//fmt.Println()
 		reply.Success = true
 		rf.commitIndex = args.LeaderCommit
 		reply.Term = args.Term
@@ -420,15 +429,15 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	if rf.leader != rf.me{
 		return index,term,false
 	}else{
-		fmt.Println("The command I have to get people agreed on",command,rf.me)
-		fmt.Println("The index which tester should check on",len(rf.log),rf.log)
+		//fmt.Println("The command I have to get people agreed on",command,rf.me)
+		//fmt.Println("The index which tester should check on",len(rf.log),rf.log)
 		//rf.command <- command
 		data, _ := command.(int)
 		rf.appendLog(Log{rf.currentTerm, data})
 		rf.appendCommands(data)
 		rf.appendCommands(len(rf.log)-1)
 		////fmt.Println("I am not blocked here")
-		////fmt.Println("command has been ",rf.command)
+		//fmt.Println("leader log is ",rf.me,rf.log)
 
 		return len(rf.log)-1,rf.currentTerm,true
 	}
@@ -474,7 +483,7 @@ func (rf *Raft) clientInbox(){
 					request.LeaderId = rf.me
 					request.PrevLogIndex,_ = index.(int)
 					request.PrevLogIndex--
-					//fmt.Println(request.PrevLogIndex)
+					fmt.Println(request.PrevLogIndex)
 					request.PrevLogTerm = rf.log[request.PrevLogIndex].Term
 					request.Command = data
 					request.LeaderCommit = rf.commitIndex
@@ -489,10 +498,10 @@ func (rf *Raft) clientInbox(){
 							// in paper is being avoided. issue: when the three new servers are joining the herd back one of them is
 							// getting the command 20 which  it missed earlier and becoming an quoroum which is not expected.
 							for ok == false && rf.state == Leader{
-							fmt.Printf("Raft server %[2]d passed the command %[3]d to server %[1]d ",i,rf.me,data)
+							fmt.Printf("Raft server %[2]d in term %[4]d passed the command %[3]d to server %[1]d ",i,rf.me,data,request.Term)
 							fmt.Println()
 							ok = rf.sendAppendEntries(i, &request, &reply)
-							fmt.Println("I am ok",i, ok)
+							//fmt.Println("I am ok",i, ok)
 							}
 							////fmt.Printf("Raft server %[1]d has sent heart beat messages to %[2]d",rf.me,i)
 							////fmt.Println()
@@ -569,8 +578,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.peerBeingRepaired =  make([]bool, len(rf.peers))
 	rf.heartbeatInterval = 150
 	//rand.Seed(time.Now().UTC().UnixNano())
-	rf.electionTimeout = rf.heartbeatInterval + 200 + rand.Intn(300)
-	//fmt.Println("Election Timeouts are",rf.electionTimeout)
+	rf.electionTimeout = rf.heartbeatInterval + 200 + rand.Intn(200)
+	fmt.Println("Election Timeouts are",rf.electionTimeout)
 	rf.ready = make(chan bool)
 	rf.readyToSendCommands = true
 	rf.state = Follower
@@ -601,7 +610,7 @@ func (rf *Raft) loop(applyCh chan ApplyMsg){
 	state := rf.State()
 	for {
 		stop := false
-		fmt.Printf("Raft server %[1]d is going to state %[2]s", rf.me,state)
+		fmt.Printf("Raft server %[1]d is going to state %[2]s with term %[3]d", rf.me,state,rf.currentTerm)
 		fmt.Println()
 		switch state {
 
@@ -611,6 +620,8 @@ func (rf *Raft) loop(applyCh chan ApplyMsg){
 			rf.candidateLoop()
 		case Leader:
 			rf.leaderLoop(applyCh)
+			// Emptying all the commands
+			rf.commands = rf.commands[:0]
 		case Stopped:
 			stop = true
 		}
@@ -635,24 +646,22 @@ func (rf *Raft) sendCommitedEntries(applyCh chan ApplyMsg){
 	}
 }
 func (rf *Raft) followerLoop(applyCh chan ApplyMsg) {
+
 	rf.timeChan = time.NewTicker(time.Millisecond * time.Duration(rf.electionTimeout))
 	rf.respChan = make(chan *AppendEntriesReply, len(rf.peers))
 	//temp:= time.Now()
 	rf.logToBeRepaired = true
 	for rf.State() == Follower {
-
 		////fmt.Println("we are here",rf.me)
 		update := false
 		select {
 		case <- rf.timeChan.C:
-			//fmt.Printf("Raft server %[1]d didn't recieve a message in the heartbeat interval %[2]d", rf.me,time.Now().Sub(//temp)/time.Millisecond)
-			//fmt.Println()
-			//temp= time.Now()
 			update = true
 		case resp:= <- rf.respChan:
 			rf.currentTerm = resp.Term
 			rf.timeChan.Stop()
 			rf.timeChan = time.NewTicker(time.Millisecond * time.Duration(rf.electionTimeout))
+
 		default:
 			update = false
 			////
@@ -665,14 +674,14 @@ func (rf *Raft) followerLoop(applyCh chan ApplyMsg) {
 		// one potential situation is where the old leader comes with a big or equal log and there are uncommitted stuff and presently at that index
 		// something else has been comitted.
 		if  !rf.logToBeRepaired && rf.commitIndex >= rf.matchIndex[rf.me] && rf.matchIndex[rf.me] < len(rf.log) {
-			fmt.Println(rf.logToBeRepaired , rf.commitIndex, rf.matchIndex[rf.me], len(rf.log)-1 )
+			//fmt.Println(rf.logToBeRepaired , rf.commitIndex, rf.matchIndex[rf.me], len(rf.log)-1 )
 			applyMsg := ApplyMsg{}
 			applyMsg.Index = rf.matchIndex[rf.me]
 			////fmt.Println("Raft Server %[1]d submitted command %[2]d for testing",rf.commitIndex,rf.matchIndex[rf.me],rf.log)
 			applyMsg.Command = rf.log[rf.matchIndex[rf.me]].Data
 			////fmt.Println("Raft Server %[1]d submitted command %[2]d for testing",rf.commitIndex,rf.matchIndex[rf.me],rf.log)
-			fmt.Printf("Raft Server %[1]d submitted command %[2]d for testing",rf.me,applyMsg.Command)
-			fmt.Println()
+			//fmt.Printf("Raft Server %[1]d submitted command %[2]d for testing",rf.me,applyMsg.Command)
+			//fmt.Println()
 			applyCh <- applyMsg
 			rf.matchIndex[rf.me] += 1
 		}
@@ -731,15 +740,6 @@ func (rf *Raft) candidateLoop() {
 			goForElection = false
 		}
 
-		// If we received enough votes then stop waiting for more votes.
-		// And return from the candidate loop
-		if votesGranted == rf.QuorumSize() {
-			//fmt.Printf("Raft Server %[1]d has won the election and the current term is %[2]d",rf.me,rf.currentTerm)
-			//fmt.Println()
-			rf.leader = rf.me
-			rf.setState(Leader)
-			return
-		}
 
 		// Collect votes from peers.
 		select {
@@ -747,8 +747,19 @@ func (rf *Raft) candidateLoop() {
 		case resp := <-respChan:
 			if true == resp.VoteGranted {
 				votesGranted++
+				fmt.Println("I received the vote for term",resp.Term)
+				fmt.Println("number of votes granted for me",rf.me,votesGranted)
+				if votesGranted == rf.QuorumSize() {
+					//fmt.Printf("Raft Server %[1]d has won the election and the current term is %[2]d",rf.me,rf.currentTerm)
+					//fmt.Println()
+					rf.leader = rf.me
+					rf.timeChan.Stop()
+					rf.setState(Leader)
+					return
+				}
 			}else{
 				if resp.Term>rf.currentTerm{
+					rf.timeChan.Stop()
 					rf.setState(Follower)
 					return
 				}
@@ -767,6 +778,7 @@ func (rf *Raft) candidateLoop() {
 			if rf.peers[rf.me] != nil {
 				goForElection = true
 			}
+
 		}
 
 	}
@@ -849,6 +861,7 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 		case <- rf.voteChan:
 			rf.timeChan.Stop()
 			//fmt.Println(" follower from here")
+			rf.leader = -1
 			rf.setState(Follower)
 			return
 
@@ -856,19 +869,20 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 			if resp.Term > rf.currentTerm{
 				rf.timeChan.Stop()
 				rf.currentTerm = resp.Term
+				rf.leader = -1
 				fmt.Println("I am going to follower from new here", rf.me,resp.Peer,resp.Term,resp.Success,resp.Append)
 				rf.setState(Follower);
 				return
 			}
 			if resp.Append == true && !resp.Success && !rf.peerBeingRepaired[resp.Peer]{
-				fmt.Println("started log repair for server",resp.Peer,resp.Term,rf.currentTerm)
+				//fmt.Println("started log repair for server",resp.Peer,resp.Term,rf.currentTerm)
 				rf.peerBeingRepaired[resp.Peer] = true
+				rf.nextIndex[resp.Peer] = resp.ConflictingIndex
 				go func(){
 					for rf.nextIndex[resp.Peer] < rf.commandToAgree +1 && rf.state == Leader{
 						request := AppendEntriesArgs{}
-						fmt.Println("nextindex ",rf.nextIndex[resp.Peer])
-						fmt.Println("leader log is", rf.log)
-						fmt.Println("error in the leader",rf.me,resp.Peer)
+						fmt.Printf("nextindex of server %[2]d is %[1]d",rf.nextIndex[resp.Peer],resp.Peer)
+						fmt.Println()
 						request.Term = rf.currentTerm
 						request.LeaderId = rf.me
 						request.PrevLogIndex = rf.nextIndex[resp.Peer]-1
@@ -878,16 +892,30 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 						request.LeaderCommit = rf.commitIndex
 						request.Append = true
 						reply := AppendEntriesReply{}
-						rf.sendAppendEntries(resp.Peer, &request, &reply)
+						ok := false
+						for ok == false{
+							ok = rf.sendAppendEntries(resp.Peer, &request, &reply)
+						}
 						////fmt.Println("command sent for repair",request.PrevLogIndex,request.PrevLogTerm,request.Command)
+
 						if reply.Success{
 							rf.nextIndex[resp.Peer]++
 							if rf.nextIndex[resp.Peer] == rf.commandToAgree +1{
 								rf.respChan <- &reply
+								fmt.Println("the last repaired",request.Command)
 							}
 							////fmt.Println("repairing the next entry", rf.nextIndex[resp.Peer])
 						}else{
-							rf.nextIndex[resp.Peer]--
+							//fmt.Println(rf.me, rf.log)
+							//fmt.Println("the command failed is",request.PrevLogIndex+1,request.Command,reply.Peer)
+							//fmt.Printf("conflict index for server %[2]d is %[1]d ",reply.ConflictingIndex,reply.Peer)
+							//fmt.Println()
+							if reply.ConflictingIndex != -1{
+								rf.nextIndex[resp.Peer] = reply.ConflictingIndex
+							}else{
+								rf.nextIndex[resp.Peer]--
+							}
+
 							////fmt.Println("repairing the previous entry", rf.nextIndex[resp.Peer],resp.Peer)
 						}
 					}
@@ -896,8 +924,8 @@ func (rf *Raft) leaderLoop(applyCh chan ApplyMsg) {
 
 			}
 			if resp.Append == true && resp.Success{
-				fmt.Printf("Raft Server %[1]d received an append response from server %[2]d for term %[3]d and entry %[4]d and successs is %[5]v and %[6]d",rf.me,resp.Peer,resp.Term,resp.Index,resp.Success,rf.nextIndex[resp.Peer])
-				fmt.Println()
+				//fmt.Printf("Raft Server %[1]d received an append response from server %[2]d for term %[3]d and entry %[4]d and successs is %[5]v and %[6]d",rf.me,resp.Peer,resp.Term,resp.Index,resp.Success,rf.nextIndex[resp.Peer])
+				//fmt.Println()
 				rf.nextIndex[resp.Peer] += 1
 				////fmt.Println()
 				if(rf.commandToAgree == resp.Index){

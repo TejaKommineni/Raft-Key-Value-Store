@@ -151,7 +151,7 @@ func (cfg *config) start1(i int) {
 	applyCh := make(chan ApplyMsg)
 	go func() {
 		for m := range applyCh {
-			fmt.Println(m)
+			//fmt.Println(m)
 			err_msg := ""
 			if m.UseSnapshot {
 				// ignore the snapshot
@@ -418,7 +418,7 @@ func (cfg *config) one(cmd int, expectedServers int) int {
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
-				fmt.Println("Commited servers ", nd, expectedServers, cmd, cmd1)
+				//fmt.Println("Commited servers ", nd, expectedServers, cmd, cmd1)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd2, ok := cmd1.(int); ok && cmd2 == cmd {

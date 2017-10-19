@@ -419,6 +419,7 @@ func TestBackup2B(t *testing.T) {
 	// now everyone
 	for i := 0; i < servers; i++ {
 		cfg.connect(i)
+		fmt.Println("connected",i)
 	}
 
 	cfg.one(rand.Int(), servers)
@@ -778,6 +779,7 @@ func TestFigure8Unreliable2C(t *testing.T) {
 
 	nup := servers
 	for iters := 0; iters < 1000; iters++ {
+		fmt.Println("iteration is",iters)
 		if iters == 200 {
 			cfg.setlongreordering(true)
 		}
@@ -786,19 +788,23 @@ func TestFigure8Unreliable2C(t *testing.T) {
 			_, _, ok := cfg.rafts[i].Start(rand.Int() % 10000)
 			if ok && cfg.connected[i] {
 				leader = i
+				fmt.Println("I am the leader",i)
 			}
 		}
 
 		if (rand.Int() % 1000) < 100 {
 			ms := rand.Int63() % (int64(RaftElectionTimeout/time.Millisecond) / 2)
 			time.Sleep(time.Duration(ms) * time.Millisecond)
+			//fmt.Println("I am sleeping for",ms)
 		} else {
 			ms := (rand.Int63() % 13)
 			time.Sleep(time.Duration(ms) * time.Millisecond)
+			//fmt.Println("I am sleeping for",ms)
 		}
 
 		if leader != -1 && (rand.Int()%1000) < int(RaftElectionTimeout/time.Millisecond)/2 {
 			cfg.disconnect(leader)
+			fmt.Println("this leader is disconnected",leader)
 			nup -= 1
 		}
 
@@ -814,6 +820,7 @@ func TestFigure8Unreliable2C(t *testing.T) {
 	for i := 0; i < servers; i++ {
 		if cfg.connected[i] == false {
 			cfg.connect(i)
+			fmt.Println("server connected",i)
 		}
 	}
 

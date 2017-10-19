@@ -28,13 +28,14 @@
       <file leaf-file-name="raft.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Go/src/raft/raft.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="892" column="21" lean-forward="true" selection-start-line="892" selection-start-column="21" selection-end-line="892" selection-end-column="21" />
+            <state relative-caret-position="37">
+              <caret line="482" column="44" lean-forward="true" selection-start-line="482" selection-start-column="44" selection-end-line="482" selection-end-column="44" />
               <folding>
                 <element signature="e#591#723#0" expanded="true" />
                 <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-                <element signature="e#8419#8578#0" expanded="false" />
-                <element signature="e#8604#8714#0" expanded="false" />
+                <element signature="e#8536#8695#0" expanded="false" />
+                <element signature="e#26406#28139#0" expanded="false" />
+                <element signature="e#29218#29756#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,8 +44,8 @@
       <file leaf-file-name="test_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Go/src/raft/test_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="424" column="0" lean-forward="true" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="755" column="41" lean-forward="true" selection-start-line="755" selection-start-column="41" selection-end-line="755" selection-end-column="41" />
               <folding>
                 <element signature="n#!!block;n#TestInitialElection2A#0" expanded="false" />
                 <element signature="n#!!block;n#TestReElection2A#0" expanded="false" />
@@ -53,12 +54,12 @@
                 <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
                 <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
                 <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+                <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
                 <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
                 <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
                 <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
                 <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
                 <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-                <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
                 <element signature="n#!!block;n#internalChurn#0" expanded="false" />
                 <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
                 <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -70,11 +71,21 @@
       <file leaf-file-name="config.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Go/src/raft/config.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7925">
-              <caret line="326" column="29" lean-forward="false" selection-start-line="326" selection-start-column="19" selection-end-line="326" selection-end-column="29" />
+            <state relative-caret-position="187">
+              <caret line="420" column="18" lean-forward="false" selection-start-line="420" selection-start-column="18" selection-end-line="420" selection-end-column="18" />
               <folding>
                 <element signature="e#230#406#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="labrpc.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Go/src/labrpc/labrpc.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,36 +94,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Raft Server 3 submitted command</find>
-      <find>leader has scommited the command</find>
-      <find>leader has s</find>
-      <find>read the persisted state 2</find>
-      <find>read the persisted state 1</find>
-      <find>630</find>
-      <find>leader has</find>
-      <find>663</find>
-      <find>rf.respchan</find>
-      <find>reply.Index</find>
-      <find>.Index</find>
-      <find>Raft server 2 is</find>
-      <find>I am going</find>
-      <find>fmt.p</find>
-      <find>getstate</find>
-      <find>nCommitted</find>
-      <find>logToBeRepaired</find>
-      <find>some</find>
-      <find>i got</find>
-      <find>rf.commandToAgree</find>
-      <find>received a</find>
+      <find>3581</find>
+      <find>voted</find>
+      <find>voted for</find>
+      <find>2298</find>
+      <find>2589</find>
+      <find>Raft server 0 is going to state candidate</find>
+      <find>followerloop</find>
+      <find>Raft server 1 is going to</find>
+      <find>leader log is</find>
+      <find>disconnect</find>
+      <find>Start(</find>
+      <find>I am the leader</find>
+      <find>followerLoop</find>
+      <find>has voted</find>
+      <find>server c</find>
+      <find>longReordering</find>
+      <find>commited s</find>
+      <find>server connected</find>
+      <find>RaftElectionTimeout</find>
+      <find>FollowerLoop</find>
+      <find>heartbeat interval</find>
+      <find>i am the leader</find>
+      <find>Raft Server 3 has</find>
       <find>candidateloop</find>
-      <find>rejected</find>
+      <find>raft server</find>
+      <find>log while</find>
+      <find>persist</find>
+      <find>persist()</find>
       <find>LeaderLoop</find>
-      <find>the leader</find>
-      <find>the respon</find>
-      <find>clien</find>
-      <find>leaderloop</find>
-      <find>duplicat</find>
-      <find>dupli</find>
+      <find>MAke(</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -141,11 +152,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="40" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1942" />
+    <option name="height" value="1102" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,7 +229,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.test_test.go">
+  <component name="RunManager" selected="Go Test.TestUnreliableAgree2C">
     <configuration name="TestBackup2B" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="cs6450" />
       <working_directory value="$PROJECT_DIR$/Go/src/raft" />
@@ -296,6 +307,17 @@
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^TestFigure82C$" />
     </configuration>
+    <configuration name="TestFigure8Unreliable2C" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="cs6450" />
+      <working_directory value="$PROJECT_DIR$/Go/src/raft" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="raft" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^TestFigure8Unreliable2C$" />
+    </configuration>
     <configuration name="TestInitialElection2A in test_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="cs6450" />
       <working_directory value="$PROJECT_DIR$/Go/src/raft" />
@@ -360,6 +382,17 @@
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^TestRejoin2B$" />
     </configuration>
+    <configuration name="TestReliableChurn2C" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="cs6450" />
+      <working_directory value="$PROJECT_DIR$/Go/src/raft" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="raft" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^TestReliableChurn2C$" />
+    </configuration>
     <configuration name="TestUnreliableAgree2C" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="cs6450" />
       <working_directory value="$PROJECT_DIR$/Go/src/raft" />
@@ -379,22 +412,24 @@
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/Go/src/raft/test_test.go" />
     </configuration>
-    <list size="15">
+    <list size="17">
       <item index="0" class="java.lang.String" itemvalue="Go Test.TestFigure82C" />
       <item index="1" class="java.lang.String" itemvalue="Go Test.TestUnreliableAgree2C" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestBasicAgree2B" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestConcurrentStarts2B" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestRejoin2B" />
-      <item index="5" class="java.lang.String" itemvalue="Go Test.TestBackup2B" />
-      <item index="6" class="java.lang.String" itemvalue="Go Test.TestCount2B" />
-      <item index="7" class="java.lang.String" itemvalue="Go Test.TestFailAgree2B" />
-      <item index="8" class="java.lang.String" itemvalue="Go Test.TestFailNoAgree2B" />
-      <item index="9" class="java.lang.String" itemvalue="Go Test.TestReElection2A in test_test.go" />
-      <item index="10" class="java.lang.String" itemvalue="Go Test.TestPersist12C" />
-      <item index="11" class="java.lang.String" itemvalue="Go Test.TestPersist22C" />
-      <item index="12" class="java.lang.String" itemvalue="Go Test.TestPersist32C" />
-      <item index="13" class="java.lang.String" itemvalue="Go Test.TestInitialElection2A in test_test.go" />
-      <item index="14" class="java.lang.String" itemvalue="Go Test.test_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestFigure8Unreliable2C" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestReliableChurn2C" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestBasicAgree2B" />
+      <item index="5" class="java.lang.String" itemvalue="Go Test.TestConcurrentStarts2B" />
+      <item index="6" class="java.lang.String" itemvalue="Go Test.TestRejoin2B" />
+      <item index="7" class="java.lang.String" itemvalue="Go Test.TestBackup2B" />
+      <item index="8" class="java.lang.String" itemvalue="Go Test.TestCount2B" />
+      <item index="9" class="java.lang.String" itemvalue="Go Test.TestFailAgree2B" />
+      <item index="10" class="java.lang.String" itemvalue="Go Test.TestFailNoAgree2B" />
+      <item index="11" class="java.lang.String" itemvalue="Go Test.TestReElection2A in test_test.go" />
+      <item index="12" class="java.lang.String" itemvalue="Go Test.TestPersist12C" />
+      <item index="13" class="java.lang.String" itemvalue="Go Test.TestPersist22C" />
+      <item index="14" class="java.lang.String" itemvalue="Go Test.TestPersist32C" />
+      <item index="15" class="java.lang.String" itemvalue="Go Test.TestInitialElection2A in test_test.go" />
+      <item index="16" class="java.lang.String" itemvalue="Go Test.test_test.go" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -407,47 +442,47 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestPersist32C - 2017.10.14 at 12h 50m 23s.xml">
-      <configuration name="TestPersist32C" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 11h 49m 06s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 12h 51m 31s.xml">
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 11h 53m 50s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 11h 55m 59s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 11h 58m 12s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 12h 04m 13s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 12h 19m 18s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 12h 19m 33s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 12h 20m 14s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFigure8Unreliable2C - 2017.10.18 at 12h 25m 38s.xml">
+      <configuration name="TestFigure8Unreliable2C" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestUnreliableAgree2C - 2017.10.18 at 15h 55m 08s.xml">
       <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 12h 51m 43s.xml">
-      <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 12h 52m 00s.xml">
-      <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 13h 14m 01s.xml">
-      <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 13h 14m 13s.xml">
-      <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUnreliableAgree2C - 2017.10.14 at 13h 16m 08s.xml">
-      <configuration name="TestUnreliableAgree2C" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="test_test_go - 2017.10.16 at 14h 34m 33s.xml">
-      <configuration name="test_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="test_test_go - 2017.10.16 at 14h 34m 41s.xml">
-      <configuration name="test_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="test_test_go - 2017.10.16 at 14h 37m 41s.xml">
-      <configuration name="test_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1102" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10918919" sideWeight="0.4864865" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42508325" sideWeight="0.12864865" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50499445" sideWeight="0.0945946" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36403996" sideWeight="0.87135136" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42619312" sideWeight="0.9054054" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23621622" sideWeight="0.5135135" order="2" side_tool="true" content_ui="tabs" />
@@ -467,10 +502,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42508325" sideWeight="0.12864865" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50499445" sideWeight="0.0945946" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3862375" sideWeight="0.87135136" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42619312" sideWeight="0.9054054" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10918919" sideWeight="0.4864865" order="0" side_tool="false" content_ui="combo" />
@@ -514,7 +549,7 @@
           <option name="timeStamp" value="116" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="121" />
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -526,8 +561,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -544,12 +580,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -574,8 +610,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,12 +629,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -622,8 +659,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -640,12 +678,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -670,8 +708,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -688,12 +727,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -718,8 +757,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,12 +776,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -766,8 +806,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -784,12 +825,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -814,8 +855,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,8 +869,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,8 +883,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,8 +897,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,8 +911,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,8 +925,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -906,8 +953,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -954,8 +1002,9 @@
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1056,15 +1105,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Go/src/labrpc/labrpc.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="97" column="15" lean-forward="true" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
+        <state relative-caret-position="166">
+          <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Go/src/raft/config.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7925">
-          <caret line="326" column="29" lean-forward="false" selection-start-line="326" selection-start-column="19" selection-end-line="326" selection-end-column="29" />
+        <state relative-caret-position="187">
+          <caret line="420" column="18" lean-forward="false" selection-start-line="420" selection-start-column="18" selection-end-line="420" selection-end-column="18" />
           <folding>
             <element signature="e#230#406#0" expanded="true" />
           </folding>
@@ -1073,8 +1123,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Go/src/raft/test_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="424" column="0" lean-forward="true" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
+        <state relative-caret-position="278">
+          <caret line="755" column="41" lean-forward="true" selection-start-line="755" selection-start-column="41" selection-end-line="755" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#TestInitialElection2A#0" expanded="false" />
             <element signature="n#!!block;n#TestReElection2A#0" expanded="false" />
@@ -1083,12 +1133,12 @@
             <element signature="n#!!block;n#TestFailNoAgree2B#0" expanded="false" />
             <element signature="n#!!block;n#TestConcurrentStarts2B#0" expanded="false" />
             <element signature="n#!!block;n#TestRejoin2B#0" expanded="false" />
+            <element signature="n#!!block;n#TestBackup2B#0" expanded="false" />
             <element signature="n#!!block;n#TestCount2B#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist12C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist22C#0" expanded="false" />
             <element signature="n#!!block;n#TestPersist32C#0" expanded="false" />
             <element signature="n#!!block;n#TestFigure82C#0" expanded="false" />
-            <element signature="n#!!block;n#TestFigure8Unreliable2C#0" expanded="false" />
             <element signature="n#!!block;n#internalChurn#0" expanded="false" />
             <element signature="n#!!block;n#TestReliableChurn2C#0" expanded="false" />
             <element signature="n#!!block;n#TestUnreliableChurn2C#0" expanded="false" />
@@ -1098,13 +1148,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Go/src/raft/raft.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="892" column="21" lean-forward="true" selection-start-line="892" selection-start-column="21" selection-end-line="892" selection-end-column="21" />
+        <state relative-caret-position="37">
+          <caret line="482" column="44" lean-forward="true" selection-start-line="482" selection-start-column="44" selection-end-line="482" selection-end-column="44" />
           <folding>
             <element signature="e#591#723#0" expanded="true" />
             <element signature="n#!!block;n#sendRequestVote#0" expanded="false" />
-            <element signature="e#8419#8578#0" expanded="false" />
-            <element signature="e#8604#8714#0" expanded="false" />
+            <element signature="e#8536#8695#0" expanded="false" />
+            <element signature="e#26406#28139#0" expanded="false" />
+            <element signature="e#29218#29756#0" expanded="false" />
           </folding>
         </state>
       </provider>
