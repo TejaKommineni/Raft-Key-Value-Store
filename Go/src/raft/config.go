@@ -352,6 +352,7 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 // but don't wait forever.
 func (cfg *config) wait(index int, n int, startTerm int) interface{} {
 	to := 10 * time.Millisecond
+	fmt.Println("waiting on index",index)
 	for iters := 0; iters < 30; iters++ {
 		nd, _ := cfg.nCommitted(index)
 		if nd >= n {
@@ -372,6 +373,7 @@ func (cfg *config) wait(index int, n int, startTerm int) interface{} {
 		}
 	}
 	nd, cmd := cfg.nCommitted(index)
+	fmt.Printf("number of servers comitted for command %[1]d at index %[2]d is %[3]d",cmd,index,nd)
 	if nd < n {
 		cfg.t.Fatalf("only %d decided for index %d; wanted %d\n",
 			nd, index, n)
