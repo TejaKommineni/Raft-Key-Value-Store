@@ -3,20 +3,25 @@ package raftkv
 import (
 	"encoding/gob"
 	"labrpc"
+	"log"
 	"raft"
 	"sync"
-	"time"
-	//"fmt"
 )
+
+const Debug = 0
+
+func DPrintf(format string, a ...interface{}) (n int, err error) {
+	if Debug > 0 {
+		log.Printf(format, a...)
+	}
+	return
+}
+
 
 type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
-	OpType string
-	OpIdentifier uint64
-	Key string
-	Value string
 }
 
 type RaftKV struct {
@@ -28,137 +33,15 @@ type RaftKV struct {
 	maxraftstate int // snapshot if log grows this big
 
 	// Your definitions here.
-	killed bool					 		// To verify if kill method is called on a key value server.
-	OperationExecuted map[uint64]bool	// To verify if an operation is already executed.
-	GetMap map[uint64]string	 		// Map that stores results for each OpIdentifier.
-	State map[string]string  	 		// The map that state machine manages
-
 }
+
 
 func (kv *RaftKV) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
-	// If Key Value Server is Killed.
-	if kv.killed {
-		reply.WrongLeader = true
-		reply.Leader = -1
-		return
-	}
-
-	//If this operation is already executed.
-	kv.mu.Lock()
-	_ , ok := kv.OperationExecuted[args.OpIdentifier]
-	kv.mu.Unlock()
-	if ok {
-		kv.mu.Lock()
-		reply.Value = kv.GetMap[args.OpIdentifier]
-		kv.mu.Unlock()
-		reply.Err = OK
-		return
-	}
-
-	var Operation Op
-	Operation.OpType = "Get"
-	Operation.Key = args.Key
-	Operation.OpIdentifier = args.OpIdentifier
-
-	kv.mu.Lock()
-	_, _, Leader := kv.rf.Start(Operation)
-	kv.mu.Unlock()
-
-	// // If this Key Value Server is not a leader.
-	if !Leader {
-		reply.WrongLeader = true
-		reply.Leader = kv.rf.LeaderId
-		return
-	}
-
-	_, Leader = kv.rf.GetState()
-	for !kv.killed && Leader{
-		kv.mu.Lock()
-		_, ok := kv.OperationExecuted[Operation.OpIdentifier]
-		kv.mu.Unlock()
-		if ok {
-			kv.mu.Lock()
-			reply.Value = kv.GetMap[Operation.OpIdentifier]
-			kv.mu.Unlock()
-			reply.Err = OK
-			break
-		}
-		time.Sleep(10 * time.Millisecond)
-		_, Leader = kv.rf.GetState()
-	}
-	
-	if kv.killed ||  !Leader {
-		reply.WrongLeader = true
-		if kv.killed {
-			reply.Leader = -1
-		} else {
-			reply.Leader = kv.rf.LeaderId
-		}
-		return
-	}
-	return 
 }
 
 func (kv *RaftKV) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
-	//If Key Value Server is Killed.
-	if kv.killed {
-		reply.WrongLeader = true
-		reply.Leader = -1
-		return
-	}
-
-	//If this operation is already executed.
-	kv.mu.Lock()
-	_ , ok := kv.OperationExecuted[args.OpIdentifier]
-	kv.mu.Unlock()
-	if ok {
-		reply.Err = OK
-		return
-	}
-
-	var Operation Op
-	Operation.OpType = args.Op
-	Operation.Key = args.Key
-	Operation.Value = args.Value
-	Operation.OpIdentifier = args.OpIdentifier
-
-	kv.mu.Lock()
-	_, _, Leader := kv.rf.Start(Operation)
-	kv.mu.Unlock()
-
-	// If this Key Value Server is not a leader.
-	if !Leader {
-		reply.WrongLeader = true
-		reply.Leader = kv.rf.LeaderId
-		return
-	}
-
-	_, Leader = kv.rf.GetState()
-	for !kv.killed && Leader {
-		kv.mu.Lock()
-		_, ok := kv.OperationExecuted[Operation.OpIdentifier]
-		kv.mu.Unlock()
-		if ok {
-			reply.Err = OK
-			break
-		}
-		time.Sleep(10 * time.Millisecond)
-		_, Leader = kv.rf.GetState()
-	}
-	
-	if kv.killed || !Leader {
-		reply.WrongLeader = true
-		if kv.killed {
-			reply.Leader = -1
-		} else {
-			reply.Leader = kv.rf.LeaderId
-		}
-		return
-	}
-
-	return 
 }
 
 //
@@ -170,7 +53,6 @@ func (kv *RaftKV) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 func (kv *RaftKV) Kill() {
 	kv.rf.Kill()
 	// Your code here, if desired.
-	kv.killed = true
 }
 
 //
@@ -195,57 +77,12 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.me = me
 	kv.maxraftstate = maxraftstate
 
-	// Your initialization code here.
+	// You may need initialization code here.
 
 	kv.applyCh = make(chan raft.ApplyMsg)
-	kv.GetMap = make(map[uint64]string)
-	kv.OperationExecuted = make(map[uint64]bool)
-	kv.State = make(map[string]string)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
-	kv.killed = false
-	go kv.ApplyChannelLoop()
+
+	// You may need initialization code here.
 
 	return kv
 }
-
-func (kv *RaftKV) ApplyChannelLoop() {
-	for applyMsg := range kv.applyCh {
-
-		if kv.killed {
-			return 
-		}
-		Operation := ((applyMsg.Command).(Op))
-		kv.mu.Lock()
-		_, ok := kv.OperationExecuted[Operation.OpIdentifier]
-		kv.mu.Unlock()
-		if ok == true {
-			continue
-		}
-
-		if Operation.OpType == "Put" {
-			kv.mu.Lock()
-			kv.State[Operation.Key] = Operation.Value
-			kv.mu.Unlock()
-		} else if Operation.OpType == "Append" {
-			kv.mu.Lock()
-			kv.State[Operation.Key] += Operation.Value
-			kv.mu.Unlock()
-		} else {
-			kv.mu.Lock()
-			value, ok := kv.State[Operation.Key]
-			kv.mu.Unlock()
-			kv.mu.Lock()
-			if ok {
-				kv.GetMap[Operation.OpIdentifier] = value
-			} else {
-				kv.GetMap[Operation.OpIdentifier] = ""
-			}
-			kv.mu.Unlock()
-		}
-		kv.mu.Lock()
-		kv.OperationExecuted[Operation.OpIdentifier] = true
-		kv.mu.Unlock()
-	}
-}
-
-
