@@ -11,4 +11,5 @@ Raft manages a service's state replicas, and in particular it helps the service 
 We implemented Raft as a Go object type with associated methods, meant to be used as a module in a larger service. A set of Raft instances talk to each other with RPC to maintain replicated logs. Our Raft interface will support an indefinite sequence of numbered commands, also called log entries. The entries are numbered with index numbers. The log entry with a given index will eventually be committed. At that point, Our Raft should send the log entry to the larger service for it to execute.
 
 Links - http://www.cs.utah.edu/~stutsman/cs6450/lab2/
+
         http://www.cs.utah.edu/~stutsman/cs6450/lab3/
