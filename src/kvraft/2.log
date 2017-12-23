@@ -1,0 +1,671 @@
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 3
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 4
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 4
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 3
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 4
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 1
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 2
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 4
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 1
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 1
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 2
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 1
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 4
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 4
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 2
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 1
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 1
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 1
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 1
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 2
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 1
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Request for Put Key:0 Value: to server 4
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 4
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Request for Put Key:1 Value: to server 4
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 1
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 0
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 1
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Put Key:4 Value: to server 0
+2016/11/07 20:47:01 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Put Key:0, Value:
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Put Key:1, Value:
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Put Key:3, Value:
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Put Key:2, Value:
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Put Key:4, Value:
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 2
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Put successful!
+2016/11/07 20:47:01 [clerk:1] kvraft.(*Clerk).PutAppend Request for Append Key:4 Value:x 4 0 y to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).PutAppend Put successful!
+2016/11/07 20:47:01 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).PutAppend Put successful!
+2016/11/07 20:47:01 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:01 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 4
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Put Key:2 Value: to server 3
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Put Request already processed
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Put successful!
+2016/11/07 20:47:01 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 0 y to server 3
+2016/11/07 20:47:01 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:01 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 4
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 0
+2016/11/07 20:47:01 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:01 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 2
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 3
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Put Key:3 Value: to server 1
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Put Key:0, Value:
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Put Key:1, Value:
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Put Key:3, Value:
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Put Key:2, Value:
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Put Key:4, Value:
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Put Key:0, Value:
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Put Key:1, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Put Key:0, Value:
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Put Key:1, Value:
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Put Key:3, Value:
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Put Key:2, Value:
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Put Key:4, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Put Key:3, Value:
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Put Key:2, Value:
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Put Key:4, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:1, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:0, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Get(): Key:1, Value: successful!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Request for Get Key:4 to server 0
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 1 y to server 3
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Get(): Key:0, Value: successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Put Request already processed
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Put successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 0
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 4
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 3
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 0
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 3
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 4
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Put Key:0, Value:
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Put Key:1, Value:
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Put Key:3, Value:
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Put Key:2, Value:
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Put Key:4, Value:
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 2
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Get(): Key:4, Value:x 4 0 y successful!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Request for Get Key:4 to server 0
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:1, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Get(): Key:1, Value: successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).PutAppend Request for Append Key:1 Value:x 1 0 y to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).Get Request for Get Key:2 to server 3
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:0, Value:
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Get(): Key:0, Value: successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).PutAppend Request for Append Key:0 Value:x 0 0 y to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 2
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 0
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 0 y to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 1 y to server 1
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).Get Get(): Key:2, Value:x 2 0 yx 2 1 y successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 2 y to server 3
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Get(): Key:4, Value:x 4 0 y successful!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Request for Get Key:4 to server 0
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 3 y to server 3
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Get(): Key:1, Value:x 1 0 y successful!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:4, Value:x 4 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Get(): Key:0, Value:x 0 0 y successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Get(): Key:4, Value:x 4 0 y successful!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).PutAppend Request for Append Key:4 Value:x 4 1 y to server 0
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).PutAppend Request for Append Key:1 Value:x 1 1 y to server 4
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Request for Append Key:3 Value:x 3 2 y to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).Get Request for Get Key:3 to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Get(): Key:0, Value:x 0 0 y successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).PutAppend Request for Append Key:4 Value:x 4 2 y to server 0
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 4 y to server 3
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 yx 4 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:0, Value:x 0 0 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Get(): Key:0, Value:x 0 0 y successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).PutAppend Request for Append Key:0 Value:x 0 1 y to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Get(): Key:1, Value:x 1 0 yx 1 1 y successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 5 y to server 3
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).Get Get(): Key:3, Value:x 3 0 yx 3 1 yx 3 2 y successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).Get Request for Get Key:3 to server 1
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Request for Get Key:4 to server 0
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend PutAppend() failed.
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 5 y to server 1
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 5 y to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:0] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 5 y to server 0
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).PutAppend I am not Leader
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Request for Append Key:2 Value:x 2 5 y to server 3
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 yx 4 2 y
+2016/11/07 20:47:02 [kvserv:1] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 yx 4 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:0, Value:x 0 0 yx 0 1 y
+2016/11/07 20:47:02 [kvserv:2] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 yx 2 5 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).Get Get(): Key:3, Value:x 3 0 yx 3 1 yx 3 2 y successful!
+2016/11/07 20:47:02 [clerk:4] kvraft.(*Clerk).Get Request for Get Key:3 to server 1
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:4, Value:x 4 0 yx 4 1 yx 4 2 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Get() failed.
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Request for Get Key:4 to server 0
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Entry committed!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Get(): Key:1, Value:x 1 0 yx 1 1 y successful!
+2016/11/07 20:47:02 [clerk:2] kvraft.(*Clerk).Get Request for Get Key:1 to server 4
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:5] kvraft.(*Clerk).Get Request for Get Key:2 to server 3
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).PutAppend Entry committed!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).PutAppend Append successful!
+2016/11/07 20:47:02 [clerk:3] kvraft.(*Clerk).Get Request for Get Key:0 to server 4
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:3, Value:x 3 0 yx 3 1 yx 3 2 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:1, Value:x 1 0 yx 1 1 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:4, Value:x 4 0 yx 4 1 yx 4 2 y
+2016/11/07 20:47:02 [kvserv:4] kvraft.(*RaftKV).ApplyChannelHandler Append Key:2, Value:x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 y
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Waiting for entry to be committed
+2016/11/07 20:47:02 [kvserv:3] kvraft.(*RaftKV).Get Get Request already processed
+2016/11/07 20:47:02 [clerk:1] kvraft.(*Clerk).Get Get(): Key:4, Value: successful!
+2016/11/07 20:47:02 get wrong value, key 4, wanted:
+x 4 0 yx 4 1 yx 4 2 y
+, got
+

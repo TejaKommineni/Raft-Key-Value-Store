@@ -1,0 +1,59 @@
+Test: One client ...
+  ... Passed
+PASS
+ok  	kvraft	15.388s
+Test: concurrent clients ...
+  ... Passed
+PASS
+ok  	kvraft	16.626s
+Test: unreliable ...
+  ... Passed
+PASS
+ok  	kvraft	16.582s
+Test: Concurrent Append to same key, unreliable ...
+  ... Passed
+PASS
+ok  	kvraft	2.020s
+Test: Progress in majority ...
+  ... Passed
+Test: No progress in minority ...
+  ... Passed
+Test: Completion after heal ...
+  ... Passed
+PASS
+ok  	kvraft	3.508s
+Test: many partitions ...
+  ... Passed
+PASS
+ok  	kvraft	22.667s
+Test: many partitions, many clients ...
+2016/11/22 20:26:46 Warning: client 3 managed to perform only 9 put operations in 1 sec?
+2016/11/22 20:26:54 Warning: client 1 managed to perform only 9 put operations in 1 sec?
+  ... Passed
+PASS
+ok  	kvraft	24.094s
+Test: persistence with one client ...
+  ... Passed
+PASS
+ok  	kvraft	20.024s
+Test: persistence with concurrent clients ...
+  ... Passed
+PASS
+ok  	kvraft	42.755s
+Test: persistence with concurrent clients, unreliable ...
+2016/11/22 20:28:45 Warning: client 3 managed to perform only 9 put operations in 1 sec?
+  ... Passed
+PASS
+ok  	kvraft	37.132s
+Test: persistence with concurrent clients and repartitioning servers...
+  ... Passed
+PASS
+ok  	kvraft	36.413s
+Test: persistence with concurrent clients and repartitioning servers, unreliable...
+2016/11/22 20:29:32 Warning: client 0 managed to perform only 6 put operations in 1 sec?
+2016/11/22 20:29:33 Warning: client 1 managed to perform only 9 put operations in 1 sec?
+2016/11/22 20:29:33 Warning: client 2 managed to perform only 9 put operations in 1 sec?
+2016/11/22 20:29:33 Warning: client 3 managed to perform only 5 put operations in 1 sec?
+  ... Passed
+PASS
+ok  	kvraft	31.466s

@@ -17,23 +17,38 @@ func schedule(jobName string, mapFiles []string, nReduce int, phase jobPhase, re
 	var ntasks int
 	var n_other int // number of inputs (for reduce) or outputs (for map)
 	var wg sync.WaitGroup
+	var ok bool
+	
 	switch phase {
 	case mapPhase:	
 		ntasks = len(mapFiles)
 		n_other = nReduce
 		//fmt.Println("number of tasks are", ntasks)
 		for i:=0;i<ntasks;i++{
+			fmt.Println("length of channel", len(registerChan))
 			worker := <-registerChan
+			fmt.Println("length of channel", len(registerChan))
 			fmt.Println("I am worker ",worker)
 			wg.Add(1)
-			dotasks := DoTaskArgs{jobName, mapFiles[i], phase, i, n_other}
+			temp := i	
+			dotasks := DoTaskArgs{jobName, mapFiles[i], phase, i, n_other}			
 			go func(){
-				call(worker, "Worker.DoTask", dotasks, nil)
+				ok = call(worker, "Worker.DoTask", dotasks, nil)					
+				fmt .Println("my status", ok,len(registerChan))	
+				for ;ok !=true;{
+				temped := worker
+				worker = <-registerChan
+				fmt.Println("failed , so i am taking up",temp,temped, worker)
+			
+				dotasks := DoTaskArgs{jobName, mapFiles[temp], phase, temp, n_other}
+				ok = call(worker, "Worker.DoTask", dotasks, nil)
+                        	}
 				wg.Done()
-				registerChan <- worker
-				//fmt.Println("My Work here is done",worker)
+				fmt.Println("I am making %s him available", worker)
+				registerChan <- worker	
+				fmt.Println("length of channel", len(registerChan))
+
 			}()
-		
 		}
 		//fmt.Println("I am out of loop")		
 		wg.Wait()
@@ -45,12 +60,26 @@ func schedule(jobName string, mapFiles []string, nReduce int, phase jobPhase, re
 		for i:=0;i<ntasks;i++{
                         worker := <-registerChan
                         wg.Add(1)
+			temp:=i
                         dotasks := DoTaskArgs{jobName, "", phase, i, n_other}
                         go func(){
-                                call(worker, "Worker.DoTask", dotasks, nil)
+                                ok = call(worker, "Worker.DoTask", dotasks, nil)
+                                fmt .Println("my status", ok,len(registerChan))
+                                for ;ok !=true;{
+                                temped := worker
+                                worker = <-registerChan
+                                fmt.Println("failed , so i am taking up",temp,temped, worker)
+
+                                dotasks := DoTaskArgs{jobName, mapFiles[temp], phase, temp, n_other}
+                                ok = call(worker, "Worker.DoTask", dotasks, nil)
+                                }
                                 wg.Done()
-				registerChan <- worker
-                        }()
+                                fmt.Println("I am making %s him available", worker)
+                                registerChan <- worker
+                                fmt.Println("length of channel", len(registerChan))
+
+                        }()                
+
                 }
                 wg.Wait()
 	}
