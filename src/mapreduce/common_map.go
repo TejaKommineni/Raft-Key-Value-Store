@@ -2,12 +2,6 @@ package mapreduce
 
 import (
 	"hash/fnv"
-	"io/ioutil"	
-	"encoding/json"
-	"os"
-	"log"	
-	
-	"fmt"
 )
 
 // doMap manages one map task: it reads one of the input files
@@ -20,35 +14,6 @@ func doMap(
 	nReduce int, // the number of reduce task that will be run ("R" in the paper)
 	mapF func(file string, contents string) []KeyValue,
 ) {
-	
-	b, err := ioutil.ReadFile(inFile)
-	if err != nil {
-                        log.Fatal(err)
-                }
-	fileContents := string(b)
- 	mapPairs := mapF(inFile,fileContents)	
-        mapValues := make(map[int][]KeyValue)
-	for i:=0;i<len(mapPairs);i++{		 
-		r := ihash(mapPairs[i].Key) % nReduce		
-		value , _ := mapValues[r]
-                value = append(value , mapPairs[i])
-                mapValues[r] = value			
-		//fmt.Println("teja", mapPairs[i].Key)
-	}
-	for k, v := range mapValues {
-		interFile := reduceName(jobName, mapTaskNumber, k)
-	       	f, err := os.OpenFile(interFile, os.O_RDWR|os.O_CREATE, 0755)
-                if err != nil {
-                        log.Fatal(err)
-                }
-		enc := json.NewEncoder(f)
-		for i:=0;i<len(v);i++{
-			enc.Encode(v[i])
-		}                
-		f.Close()
-    	}	
-        
-	fmt.Println("end--")
 	//
 	// You will need to write this function.
 	//
